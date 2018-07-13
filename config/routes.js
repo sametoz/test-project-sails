@@ -27,7 +27,8 @@ module.exports.routes = {
   '/': {
     view: 'pages/homepage'
   },
-  '/bolumler':{ view: 'bolumListele', action:'bolumListele'}
+  '/bolumler':{ view: 'bolumListele', action:'bolumListele'},
+  'GET /bolumlerilistele': 'BolumlerController.listele',
 
   /***************************************************************************
   *                                                                          *
