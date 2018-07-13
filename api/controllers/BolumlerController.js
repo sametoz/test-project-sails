@@ -7,11 +7,12 @@
 
 module.exports = {
   listele: function (req, res) {
-    Bolumler.query('SELECT * FROM bolumler', (err, results) => {
+    Bolumler.getDatastore().sendNativeQuery('SELECT * FROM bolumler', (err, results) => {
       if (err) {
         res.send(400);
       } else {
-        res.view('bolumListele',{sonuc:results});
+        console.log(results);
+        res.view('bolumListele',{sonuc:results.rows});
       }
     });
   }
